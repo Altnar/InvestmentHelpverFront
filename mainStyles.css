@@ -1,0 +1,31 @@
+div {
+    text-align: center;
+}
+
+a{
+    color: #D9A036;
+}
+td{
+    height: 45px;
+}
+.searhButton{
+    text-align: center;
+    color: #D9A036;
+    background-color: white;
+    margin: 0 auto;
+    width: 250px
+}
+.searchLine{
+    text-align: center;
+    color: #D9A036;
+    margin: 0 auto;
+    width: 700px;
+}
+
+.newsList{
+    margin: 0 auto;
+    width: 100%;
+}
+.newsListHidden{
+    visibility: hidden;
+}

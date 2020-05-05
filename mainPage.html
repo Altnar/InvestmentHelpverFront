@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="mainStyles.css">
+    <meta charset="UTF-8">
+    <title>mainPage</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body style="background-color:#0D0D0D; color:white">
+    <div style="text-align: left">
+        <p id="Authorization">Authorization</p>
+        <form>
+            <input type="text" style="color:#D9A036" id="autoLine">
+        </form>
+        <form>
+            <input type="button" value="Войти" style="text-align: center;color: #D9A036;background-color: white" id="autoButton">
+        </form>
+    </div>
+    <div style="border: 50px solid #0D0D0D">
+        <p>Stock Symbol</p>
+        <form>
+            <input type="search" name="q" class="searchLine">
+        </form>
+        <form>
+            <input type="button" value="Найти" class="searhButton">
+        </form>
+    </div>
+    <table class="newsListHidden" rules="rows"></table>
+    <div id="curve_chart" style="width: 2000px; height: 1000px; text-align: center"></div>
+    <script src="mainScripts.js"></script>
+</body>
+</html>
