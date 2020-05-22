@@ -1,4 +1,4 @@
-let serverAdr = "http://localhost:8090/"
+let serverAdr = "http://localhost:8090"
 let isAutorise = false
 let user = ""
 let table = document.querySelector('table');
@@ -33,17 +33,17 @@ autoButton.onclick = function() {
 
 function httpGet(theUrl) {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.open( "GET", theUrl, false );
     xmlHttp.send( null );
     return xmlHttp.responseText;
 }
 
 function sendHistory(symbolName, userName) {
-    httpGet(serverAdr + symbolName + ";" + userName + ";writeDB")
+    httpGet(serverAdr +"/db?symbol=" + symbolName + "&user=" + userName)
 }
 function getNews(symbolName) {
     let table = document.querySelector('table');
-    let jsn = httpGet(serverAdr + symbolName + ";_;news")
+    let jsn = httpGet(serverAdr +"/news?symbol=" + symbolName)
     let pjsn = JSON.parse(jsn)
     let htmltext = ""
 
@@ -57,7 +57,7 @@ function drawChart(symbolName) {
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
 
-    let jsn = httpGet(serverAdr + symbolName + ";_;plot")
+    let jsn = httpGet(serverAdr +"/plot?symbol=" + symbolName)
     let pjsn = JSON.parse(jsn)
     let plotData = [['Date', 'Price']];
     for (var i = 0; i < pjsn.length; i++) {
